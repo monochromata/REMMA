@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+
+   <extension
+         point="org.jactr.modules">
+      <module
+            class="de.monochromata.jactr.remma.REMMAModule"
+            defaultEnabled="false"
+            name="REMMA"
+            requiresCommonReality="false"
+            weight="30">
+         <description>
+            This is the description of your new module
+         </description>
+      </module>
+   </extension>
+   <extension
+         point="org.jactr.io.astparticipants">
+      <astparticipant
+            contributingClass="de.monochromata.jactr.remma.REMMAModule"
+            content="de/monochromata/jactr/remma/remma.jactr"
+            class="de.monochromata.jactr.remma.REMMAParticipant">
+      </astparticipant>
+   </extension>
+
+</plugin>
