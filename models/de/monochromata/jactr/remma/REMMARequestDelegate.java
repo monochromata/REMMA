@@ -644,23 +644,21 @@ public class REMMARequestDelegate extends AsynchronousRequestDelegate {
 		public FixationResult forecastNextFixation(double requestStartS,
 				double forecastDurationS) {
 			if(requestStartS < fixationStartS) {
-				LOGGER.error("Attemping to forecast next fixation at "+requestStartS
+				LOGGER.warn("Attemping to forecast next fixation at "+requestStartS
 						+" before start of current fixation at "+fixationStartS);
-				return new InternalError();
-			} else {
-				return super.forecastNextFixation(requestStartS, forecastDurationS);
+				// return new InternalError();
 			}
+			return super.forecastNextFixation(requestStartS, forecastDurationS);
 		}
 		
 		@Override
 		public FixationResult getNextFixation(double requestStartS, double preparationDuration) {
 			if(requestStartS < fixationStartS) {
-				LOGGER.error("Attemping to get next fixation at "+requestStartS
+				LOGGER.warn("Getting next fixation at "+requestStartS
 						+" before start of current fixation at "+fixationStartS);
-				return new InternalError();
-			} else {
-				return super.getNextFixation(requestStartS, preparationDuration);
+				// return new InternalError();
 			}
+			return super.getNextFixation(requestStartS, preparationDuration);
 		}
 		
 		/*
