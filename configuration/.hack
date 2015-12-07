@@ -1,0 +1,1 @@
+To be able to checkout the configuration directory.
